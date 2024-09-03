@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Page Popup</title>
+<style>
+/* Basic styling */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #f2f2f2;
+}
+
+/* Popup background */
+.popup-background {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+display: none;
+justify-content: center;
+align-items: center;
+}
+
+/* Popup box */
+.popup-box {
+background-color: white;
+padding: 20px;
+border-radius: 5px;
+max-width: 500px;
+width: 90%;
+text-align: center;
+}
+
+/* Image slider styling */
+.slider {
+position: relative;
+width: 100%;
+max-width: 100%;
+margin-bottom: 20px;
+}
+
+.slider img {
+width: 100%;
+border-radius: 5px;
+}
+
+.buy-button, .copy-id-button {
+padding: 10px 20px;
+margin: 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+}
+
+.buy-button {
+background-color: #28a745;
+color: white;
+}
+
+.copy-id-button {
+background-color: #007bff;
+color: white;
+}
+
+/* Trigger image styling */
+.trigger-image {
+width: 200px;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<!-- Trigger image -->
+<img src="ZNGqk01-5333133636.jpg" alt="Click to see product" class="trigger-image" onclick="showPopup()">
+
+<!-- Popup -->
+<div class="popup-background" id="popupBackground">
+<div class="popup-box">
+<!-- Image slider -->
+<div class="slider">
+<img src="ZNGqk01-5333133636.jpg" alt="Product Image 1">
+<img src="ZNGqk01-5333133636.jpg" alt="Product Image 2">
+</div>
+<!-- Buy button -->
+<button class="buy-button" onclick="alert('Purchased!')">Buy Now</button>
+<!-- Copy ID button -->
+<button class="copy-id-button" onclick="copyId()">Copy Product ID</button>
+</div>
+</div>
+
+<script>
+// Function to show the popup
+function showPopup() {
+document.getElementById('popupBackground').style.display = 'flex';
+}
+
+// Function to copy product ID
+function copyId() {
+const productId = '12345';
+navigator.clipboard.writeText(productId).then(() => {
+alert('Product ID copied: ' + productId);
+});
+}
+</script>
+
+</body>
+</html>
